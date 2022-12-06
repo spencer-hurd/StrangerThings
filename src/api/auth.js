@@ -2,7 +2,7 @@ import React from "react";
 const cohort = "2211-FTB-ET-WEB-FT";
 const APIURL = "https://strangers-things.herokuapp.com/api/";
 
-const fetchPosts = async () => {
+export const fetchPosts = async () => {
   const APIURL = "https://strangers-things.herokuapp.com/api/";
   const cohort = "2211-FTB-ET-WEB-FT";
   const response = await fetch(`${APIURL}${cohort}/posts/`);
@@ -53,4 +53,4 @@ export const fetchMe = async (token) => {
   }
 };
 
-export default fetchPosts;
+
