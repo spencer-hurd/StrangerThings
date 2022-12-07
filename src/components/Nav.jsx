@@ -3,8 +3,21 @@ import { Link } from "react-router-dom";
 
 
 const Nav = () => {
+    const logIn = () => {
+        setToken(user.token)
+    }
+    const isLoggedIn = () => {
+        if (token) {
+            return true;
+        }else{
+            return false;
+        }
+    }
     return (
         <header>
+            <Link to="/" className="link-button">
+        Stranger's Things
+      </Link>
             <form>
                 <label>Log In: <input
                     type="text"
@@ -17,7 +30,7 @@ const Nav = () => {
                 <button
                     type="submit">submit</button>
             </form>
-            <Link to="/Register">New User? Register Here</Link>
+            <Link to="/register">New User? Register Here</Link>
         </header>
     )
 }

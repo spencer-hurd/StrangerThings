@@ -13,7 +13,7 @@ export const fetchPosts = async () => {
 export const registerUser = async (username, password) => {
   try {
     const response = await fetch(
-      `https://strangers-things.herokuapp.com/api/${cohort}/users/register/`,
+      `https://strangers-things.herokuapp.com/api/${cohort}/users/register`,
       {
         method: "POST",
         headers: {
@@ -27,10 +27,9 @@ export const registerUser = async (username, password) => {
         }),
       }
     );
-    const {
-      data: { token },
-    } = await response.json();
-    return token;
+    const { data } = await response.json();
+    console.log(data.token);
+    return data.token;
   } catch (error) {
     console.error(error);
   }
@@ -47,10 +46,9 @@ export const fetchMe = async (token) => {
         },
       }
     );
-    const data = await response.json();
+    const { data } = await response.json();
+    return data;
   } catch (error) {
     console.error(error);
   }
 };
-
-
