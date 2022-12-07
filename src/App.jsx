@@ -1,10 +1,10 @@
 import "./App.css";
-import FetchPosts from "./api/auth";
 import SinglePost from "./components/Post";
 import AllPosts from "./components/AllPosts";
 import { fetchPosts, fetchMe } from "./api/auth";
 import { useEffect, useState } from "react";
 import RegisterForm from "./components/RegisterForm";
+import Nav from "./components/Nav";
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"))
@@ -24,6 +24,7 @@ function App() {
     getPosts();
   }, []);
   return (<div className="App">
+    <Nav />
     <AllPosts posts = {posts}/>
   </div>
   );
