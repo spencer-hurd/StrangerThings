@@ -1,5 +1,7 @@
 import React from "react";
 import { deletePost } from "../api/auth";
+import { Link } from "react-router-dom";
+import { checkUserLoggedIn } from "./Login";
 
 const SinglePost = ({post, setPosts, posts}) => {
   const handleDelete = (id) => {deletePost(id, {setPosts, posts})}
@@ -12,8 +14,12 @@ const SinglePost = ({post, setPosts, posts}) => {
       <b>Location: {post.location ? post.location : "[On Request]"}</b>
       {post.isAuthor ? (
         <button onClick={() => handleDelete(post._id)}>Delete</button>
-      ) : 
-      <button>View</button>}
+      ) : checkUserLoggedIn() ? (
+      <Link to="/message-form" state={{ id: post._id }}>
+      <button type="button">Send Message</button>
+      </Link>) :
+      <div></div>
+      }
     </div>
   );
 };

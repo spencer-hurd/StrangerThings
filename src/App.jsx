@@ -9,16 +9,18 @@ function App() {
   const [user, setUser] = useState({});
   useEffect(() => {
     const getMe = async () => {
-      const data = await fetchMe(token);
-      setUser(data);
-      // console.log(user);
-    };
-    getMe();
+      const response = await fetchMe();
+      const user = await response;
+      setUser(user)
+      console.log("USER HERE: ", user)
+    }
+    getMe()
   }, [])
   
   return (<div className="App">
+    <h3>{user.messages}</h3>
     <Nav setToken={setToken}/>
-    <AllRoutes setToken={setToken} />
+    <AllRoutes setToken={setToken} user={user}/>
   </div>
   );
 }

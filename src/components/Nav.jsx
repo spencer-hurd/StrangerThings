@@ -17,6 +17,7 @@ const Nav = ({setToken}) => {
             setToken(null);
           }}>Logout</button>
           <Link to="/new-listing" className="link-button">Create a New Listing</Link>
+          <Link to="/messages"><button type="button">Messages</button></Link>
         </div>
         :
         <div>

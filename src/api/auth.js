@@ -77,8 +77,8 @@ export const fetchMe = async () => {
         },
       }
     );
-    const { data } = await response.json();
-    return data;
+    const user = await response.json();
+    return user;
   } catch (error) {
     console.error(error);
   }

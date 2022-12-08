@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { registerUser } from "../api/auth";
 
 const RegisterForm = ({ setToken }) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const location = useLocation();
     return (
         <div id="register-form">
             <form onSubmit={async (e)=> {
@@ -12,6 +14,7 @@ const RegisterForm = ({ setToken }) => {
                 const token = await registerUser(username, password)
                 setToken(token);
                 localStorage.setItem("token", token);
+                location.pathname = '/';
                } catch (error) {
                 console.error(error)
                }

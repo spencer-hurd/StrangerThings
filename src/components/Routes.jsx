@@ -4,8 +4,10 @@ import RegisterForm from "./RegisterForm";
 import Home from "../Home";
 import { Login } from "./Login";
 import NewListingForm from "./NewListingForm";
+import MessageForm from "./MessageForm";
+import Messages from "./Messages";
 
-const AllRoutes = ({token, setToken}) => {
+const AllRoutes = ({token, setToken, user}) => {
     return (
         <div>
             <Routes>
@@ -13,6 +15,8 @@ const AllRoutes = ({token, setToken}) => {
                 <Route path="/login" element={<Login setToken={setToken}/>}></Route>
                 <Route path="/register" element={<RegisterForm setToken={setToken}/>}></Route>
                 <Route path="/new-listing" element={<NewListingForm token={token}></NewListingForm>}></Route>
+                <Route path="/message-form" element={<MessageForm />}></Route>
+                <Route path="/messages" element={<Messages user={user}/>}></Route>
             </Routes>
         </div>
     )

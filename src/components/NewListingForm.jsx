@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 const cohort = "2211-FTB-ET-WEB-FT";
+import { useNavigate } from 'react-router-dom';
+
+
+
 
 const NewListingForm = () => {
   const [title, setTitle] = useState('');
@@ -8,8 +12,7 @@ const NewListingForm = () => {
   const [location, setLocation] = useState('');
   const [willDeliver, setWillDeliver] = useState(false);
   const [posts, setPosts] = useState([]);
-  
-
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -37,6 +40,7 @@ const NewListingForm = () => {
       console.log(newPost)
       const result = setPosts([...posts, newPost]);
       console.log(result);
+      navigate('/')
       return result;
     } catch (error) {
       console.error(error);
