@@ -2,19 +2,9 @@ import AllPosts from "./components/AllPosts";
 import { fetchPosts, fetchMe } from "./api/auth";
 import { useEffect, useState } from "react";
 const Home = () => {
-    // const [token, setToken] = useState(localStorage.getItem("token"))
-    const [posts, setPosts] = useState([]);
-    // const [user, setUser] = useState({});
 
-    // console.log(token)
-    // useEffect(() => {
-    //   const getMe = async () => {
-    //     const data = await fetchMe(token);
-    //     setUser(data);
-    //     console.log(user);
-    //   };
-    //   getMe();
-    // }, [])
+    const [posts, setPosts] = useState([]);
+    
     useEffect(() => {
       const getPosts = async () => {
         const response = await fetchPosts();
@@ -26,7 +16,7 @@ const Home = () => {
       getPosts();
     }, []);
     return (<div className="App">
-      <AllPosts posts={posts} />
+      <AllPosts setPosts={setPosts} posts={posts} />
     </div>
     );
   }
