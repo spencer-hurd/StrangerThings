@@ -46,3 +46,23 @@
   /* align-items: space-between; */
   padding-right: 3px;
 }
+
+.header-button {
+  display: inline-flex;
+  justify-content: center;
+  
+}
+
+.single-post {
+  background-color: white;
+  color: black;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.new-listing-form {
+  display: flex;
+}
+

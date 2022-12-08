@@ -48,35 +48,35 @@ const NewListingForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>Title: <input
+    <form onSubmit={handleSubmit} className="new-listing-form">
+      <label className='post-title'>Title: <input
         type="text"
         value={title}
         onChange={e => setTitle(e.target.value)}
         placeholder="Title"
         required
       /></label>
-      <label>Description: <input
+      <label className='description'>Description: <input
         type="text"
         value={description}
         onChange={e => setDescription(e.target.value)}
         placeholder="Description"
         required
       /></label>
-      <label>Price: <input
+      <label className='price'>Price: <input
         type="text"
         value={price}
         onChange={e => setPrice(e.target.value)}
         placeholder="Price"
         required
       /></label>
-      <label>Location: <input
+      <label className='item-location'>Location: <input
         type="text"
         value={location}
         onChange={e => setLocation(e.target.value)}
         placeholder="Location"
       /></label>
-      <label>Will Deliver?
+      <label className='will-deliver'>Will Deliver?
       <input
         type="checkbox"
         checked={willDeliver}

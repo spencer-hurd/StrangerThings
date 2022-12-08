@@ -31,7 +31,7 @@ const MessageForm = () => {
         }
     }
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="message-form">
         <input type="text" value={content} onChange={e => setContent(e.target.value)} placeholder="Message content"></input>
         <button type="submit">Send Message</button>
         </form>

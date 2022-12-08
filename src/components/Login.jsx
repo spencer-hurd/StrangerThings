@@ -21,14 +21,14 @@ export const Login = ({setToken}) => {
             console.error(error)
             }
         }}>
-            <label>Log In: <input 
+            <label>Enter Username: <input 
                 value={username} 
                 type="text" 
                 placeholder="Enter Username" 
                 required 
                 onChange={(e)=>setUsername(e.target.value)}/>
             </label>
-            <label>Create Password: <input 
+            <label>Enter Password: <input 
                 value={password} 
                 type="password" 
                 placeholder="Enter Password" 

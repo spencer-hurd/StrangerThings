@@ -1,21 +1,23 @@
 import React from "react";
 
 
-const Messages = ({user}) => {
-    console.log("USER HERE NOW:", {user})
-    const messages = user.data.messages;
-    console.log(messages);
+const Messages = (props) => {
+    console.log("USER HERE NOW:", props.user)
+    const messages = props.user?.data?.messages;
+    console.log("messages:", messages);
   return (
     <>
-      {messages !== [] ? (
-      messages.map((message) => (
-            <div key={message._id}>
+      {messages && messages.length ? messages.map((message) => {
+        return (
+            <div key={message._id} className="single-message">
                 <p>{message.content}</p>
+                <b>Message from: {message.fromUser.username}</b>
+                <p>Regarding this post: {message.post.title}</p>
             </div>
-      )
-        )) : (
-            <h5>none</h5>
-        )}
+        )
+        
+      }) : <p>Your inbox is empty.</p>}
+    
     </>
   );
 };
