@@ -39,3 +39,10 @@
 .read-the-docs {
   color: #888;
 }
+
+.link-button {
+  display: flex;
+  flex-direction: row;
+  /* align-items: space-between; */
+  padding-right: 3px;
+}

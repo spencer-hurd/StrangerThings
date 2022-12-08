@@ -35,6 +35,30 @@ export const registerUser = async (username, password) => {
   }
 };
 
+export const loginUser = async (username, password) => {
+  try {
+  const response = await fetch(
+    `https://strangers-things.herokuapp.com/api/${cohort}/users/login`, 
+    {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        user: {
+          username,
+          password
+        },
+      }),
+    });
+    const { data } = await response.json();
+    console.log(data.token);
+    return data.token;
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
 export const fetchMe = async (token) => {
   try {
     const response = await fetch(

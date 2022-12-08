@@ -5,7 +5,7 @@ import { fetchMe } from "./api/auth";
 import { useEffect, useState } from "react";
 
 function App() {
-  const [token, setToken] = useState(localStorage.getItem("token"))
+  const [token, setToken] = useState({})
   const [user, setUser] = useState({});
   useEffect(() => {
     const getMe = async () => {
@@ -17,8 +17,8 @@ function App() {
   }, [])
   
   return (<div className="App">
-    <Nav />
-    <AllRoutes setToken={setToken}/>
+    <Nav setToken={setToken}/>
+    <AllRoutes setToken={setToken} />
   </div>
   );
 }

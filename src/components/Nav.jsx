@@ -1,36 +1,23 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { loginUser } from "../api/auth";
 
-
-const Nav = () => {
-    const logIn = () => {
-        setToken(user.token)
-    }
-    const isLoggedIn = () => {
-        if (token) {
-            return true;
-        }else{
-            return false;
-        }
+const Nav = ({token, setToken}) => {
+    // const logIn = () => {
+    //     setToken(props.token)
+    // }
+    const logOut = () => {
+        setToken(null)
+        localStorage.removeItem("token")
     }
     return (
         <header>
             <Link to="/" className="link-button">
         Stranger's Things
       </Link>
-            <form>
-                <label>Log In: <input
-                    type="text"
-                    placeholder="Enter Username" />
-                </label>
-                <label>Password: <input
-                    type="password"
-                    placeholder="Enter Password" />
-                </label>
-                <button
-                    type="submit">submit</button>
-            </form>
-            <Link to="/register">New User? Register Here</Link>
+            <Link to="/login" className="link-button">Log In!</Link>
+            <Link to="/register" className="link-button">New User? Register Here</Link>
+            <button onClick={logOut}>Log Out</button>
         </header>
     )
 }
