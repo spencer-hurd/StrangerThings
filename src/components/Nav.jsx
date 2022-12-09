@@ -3,7 +3,8 @@ import { Link, useLocation} from "react-router-dom";
 import { loginUser } from "../api/auth";
 import { checkUserLoggedIn } from "./Login";
 
-const Nav = ({setToken}) => {
+const Nav = ({setToken, user}) => {
+    const username = user?.data?.username
     const location = useLocation();
     return (
         <header>
@@ -12,6 +13,7 @@ const Nav = ({setToken}) => {
       </Link>
       {checkUserLoggedIn() ?
         <div>
+          <b className="welcome">Welcome, {username}!</b>
           <Link to="/new-listing"><button type="button" className="header-button">Create a New Listing</button></Link>
           <Link to="/messages"><button type="button" className="header-button">Messages</button></Link>
           <Link to="/my-posts"><button type="button" className="header-button">My Posts</button></Link>

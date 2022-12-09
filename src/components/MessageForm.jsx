@@ -26,6 +26,8 @@ const MessageForm = () => {
 })
         const newMessage = await response.json();
         console.log(newMessage)
+        setContent("")
+        alert("Message sent!")
         } catch (error) {
             console.error(error)
         }

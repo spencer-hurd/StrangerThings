@@ -20,7 +20,7 @@ function App() {
 }, [user])
   
   return (<div className="App">
-    <Nav setToken={setToken}/>
+    <Nav setToken={setToken} user={user}/>
     <AllRoutes setToken={setToken} user={user}/>
   </div>
   );
