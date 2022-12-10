@@ -7,7 +7,7 @@ const SinglePost = ({post, setPosts, posts}) => {
   const handleDelete = (id) => {deletePost(id, {setPosts, posts})}
   return (
     <div className="single-post">
-      <h2>{post.title}</h2>
+      <h2 className="title">{post.title}</h2>
       <p>{post.description}</p>
       <b>Price: {post.price}</b>
       <h3>Seller: {post.author.username}</h3>

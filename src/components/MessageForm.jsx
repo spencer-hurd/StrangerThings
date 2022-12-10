@@ -33,9 +33,10 @@ const MessageForm = () => {
         }
     }
     return (
-        <form onSubmit={handleSubmit} className="message-form">
-        <input type="text" value={content} onChange={e => setContent(e.target.value)} placeholder="Message content"></input>
-        <button type="submit">Send Message</button>
+      <form onSubmit={handleSubmit} className="messageForm">
+        Send a Message to the Stranger
+        <input className="newMessage" type="text" value={content} onChange={e => setContent(e.target.value)} placeholder="Type something here..."></input>
+        <button className="submit" type="submit">Send Message</button>
         </form>
     )
 }

@@ -16,9 +16,9 @@ const AllPosts = (props) => {
   const postsToDisplay = searchTerm.length ? filteredPosts : posts;
   return (
     <>
-      <input type="text" placeholder="Search" value={searchTerm} onChange={e => setSearchTerm(e.target.value)}></input>
+      <input className="searchBar" type="text" placeholder="Search" value={searchTerm} onChange={e => setSearchTerm(e.target.value)}></input>
       {postsToDisplay.map((post) => {
-        return <SinglePost post={post} posts={posts} setPosts={setPosts} isAuthor={post.isAuthor} key={post._id} />;
+        return <SinglePost post={post} posts={posts} setPosts={setPosts} isAuthor={post.isAuthor} key={post._id}/>;
       })}
     </>
   );

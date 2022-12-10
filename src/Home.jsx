@@ -17,7 +17,7 @@ const Home = () => {
       getPosts();
     }, []);
 
-    return (<div className="App">
+    return (<div className="posts">
       <AllPosts setPosts={setPosts} posts={posts} />
     </div>
     );

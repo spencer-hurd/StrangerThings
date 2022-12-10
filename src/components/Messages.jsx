@@ -10,7 +10,7 @@ const Messages = (props) => {
       {messages && messages.length ? messages.map((message) => {
         return (
             <div key={message._id} className="single-message">
-                <p>{message.content}</p>
+                <h2>{message.content}</h2>
                 <b>Message from: {message.fromUser.username}</b>
                 <p>Regarding this post: {message.post.title}</p>
             </div>

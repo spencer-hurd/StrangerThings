@@ -9,7 +9,7 @@ export const Login = ({setToken}) => {
     const location = useLocation();
     
     return (
-    <form onSubmit={async (e)=> {
+    <form className="user" onSubmit={async (e)=> {
         try {
             e.preventDefault();
             const token = await loginUser(username, password)
@@ -21,20 +21,23 @@ export const Login = ({setToken}) => {
             console.error(error)
             }
         }}>
-            <label>Enter Username: <input 
+            <label>
+            <input 
                 value={username} 
                 type="text" 
-                placeholder="Enter Username" 
+                placeholder="Username" 
                 required 
                 onChange={(e)=>setUsername(e.target.value)}/>
             </label>
-            <label>Enter Password: <input 
+            <label>
+            <input 
                 value={password} 
                 type="password" 
-                placeholder="Enter Password" 
+                placeholder="Password" 
                 required
                 onChange={(e)=>setPassword(e.target.value)}/>
             </label>
+            <br />
             <button type="submit">Log In</button>
             </form>
 )}

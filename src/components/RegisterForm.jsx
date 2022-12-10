@@ -16,8 +16,8 @@ const RegisterForm = ({ setToken }) => {
         }
       } 
     return (
-        <div id="register-form">
-            <form onSubmit={async (e)=> {
+        <div>
+            <form className="user" onSubmit={async (e)=> {
                try {
                 e.preventDefault();
                 if (comparePasswords(username, password, confirmPassword)) {
@@ -30,22 +30,25 @@ const RegisterForm = ({ setToken }) => {
                 console.error(error)
                }
             }}>
-                <label>Create Username: <input 
+              <label>Create Account
+                <input 
                 value={username} 
                 minLength={4} 
                 maxLength={12} 
                 type="text" 
-                placeholder="Enter Username" 
+                placeholder="Username" 
                 required 
                 onChange={(e)=>setUsername(e.target.value)}/></label>
-                <label>Create Password: <input 
+              <label>
+                <input 
                 value={password} 
                 minLength={8} 
                 type="password" 
-                placeholder="Enter Password" 
+                placeholder="Password" 
                 required
                 onChange={(e)=>setPassword(e.target.value)}/></label>
-                <label>Confirm Password: <input 
+              <label>
+                <input 
                 value={confirmPassword} 
                 minLength={8} 
                 type="password" 
