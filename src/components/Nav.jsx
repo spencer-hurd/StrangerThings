@@ -1,17 +1,17 @@
 import React from "react";
-import { Link, useLocation} from "react-router-dom";
-import { loginUser } from "../api/auth";
+import { Link} from "react-router-dom";
 import { checkUserLoggedIn } from "./Login";
 
 const Nav = ({setToken, user}) => {
   const username = user?.data?.username
   console.log(username);
-    const location = useLocation();
-    return (
+      return (
         <header className="header">
             <Link to="/" className="logo">
-            <div id="stranger">STRANGER'
-            <span id="last">S</span></div>
+            <div className="strangers">
+              <div id="stranger">STRANGER'
+              <span id="last">S</span></div>
+            </div>
             <div id="things">THINGS</div>
         </Link>
         <br/>
